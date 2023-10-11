@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>"Enter the subject mark"</h1> <input type="number" id="mark1"
+        style="background-color: lightblue;"><br><br><input type="number" id="mark2"
+        style="background-color: lightblue;"><br><br><input type="number" id="mark3"
+        style="background-color: lightblue;"><br><br><input type="submit" onclick="studentResult()">
+    <h1 id="demo"></h1>
+</body>
+<script>
+    function studentResult() {
+        let mark1 = parseInt(document.getElementById("mark1").value);
+        let mark2 = parseInt(document.getElementById("mark2").value);
+        let mark3 = parseInt(document.getElementById("mark3").value);
+
+        let markTotal = mark1 + mark2 + mark3;
+        console.log(markTotal);
+
+        let result = markTotal / 3;
+        console.log(result);
+
+        switch (true) {
+            case result >= 90:
+                document.getElementById("demo").innerHTML = "A grade";
+                break;
+            case result >= 80:
+                document.getElementById("demo").innerHTML = "B grade";
+                break;
+            case result >= 70:
+                document.getElementById("demo").innerHTML = "C grade";
+                break;
+            case result >= 60:
+                document.getElementById("demo").innerHTML = "D grade";
+                break;
+            case result >= 50:
+                document.getElementById("demo").innerHTML = "E grade";
+                break;
+            case result >= 33:
+                document.getElementById("demo").innerHTML = "F grade";
+                break;
+            case result <= 33:
+                document.getElementById("demo").innerHTML = "Fail";
+                break;
+            default:
+                document.getElementById("demo").innerHTML = "enter valid value";
+        }
+    }
+
+</script>
+
+</html>
